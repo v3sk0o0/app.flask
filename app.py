@@ -96,7 +96,7 @@ class Funnel_enum(object):
 @app.route('/funnel/', methods=['GET'])
 def give_modified_funnel():
     global headers, url_funnels, funnels_enum
-    #Request to be moved to another function/class and decorated for log for the both request
+
     funnels = decorate_request(url_funnels, headers=headers)
     fun_enum = decorate_request(funnels_enum, headers=headers)
     enum_obj = Funnel_enum(fun_enum)
@@ -141,7 +141,4 @@ def give_modified_funnel_summary():
 
 
 if __name__ == '__main__':
-    # opts
-    # sys.argv[1]
-    # port=<Id>
     app.run(debug=True, port=int(options.port))
